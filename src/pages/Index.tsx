@@ -281,38 +281,81 @@ const Index = () => {
 
       <section id="blog" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Блог</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Полезные материалы о контекстной рекламе
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div>
+              <div className="text-center lg:text-left mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4">Блог</h2>
+                <p className="text-lg text-muted-foreground">
+                  Полезные материалы о контекстной рекламе
+                </p>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-lg font-semibold">
+                    Как снизить стоимость клика в Google Ads?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Используйте точное соответствие ключевых слов, улучшайте показатель качества объявлений, тестируйте различные варианты текстов и следите за релевантностью посадочных страниц.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-lg font-semibold">
+                    Какой бюджет нужен для старта?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Рекомендуем начинать от 50 000 руб/мес для тестирования гипотез. Это позволит собрать достаточно данных для оптимизации кампаний и выхода на стабильные результаты.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-lg font-semibold">
+                    Сколько времени занимает настройка?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Полная настройка занимает 3-5 рабочих дней. Это включает анализ ниши, подбор ключевых слов, создание объявлений, настройку конверсий и запуск тестовых кампаний.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            <div>
+              <div className="text-center lg:text-left mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">Наш Telegram</h3>
+                <p className="text-muted-foreground">
+                  Актуальные новости и советы по рекламе
+                </p>
+              </div>
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative" style={{ paddingBottom: '600px', maxHeight: '600px' }}>
+                    <iframe
+                      src="https://t.me/s/your_channel_name"
+                      className="absolute top-0 left-0 w-full h-full pointer-events-none"
+                      style={{
+                        border: 'none',
+                        pointerEvents: 'none',
+                        userSelect: 'none'
+                      }}
+                      sandbox="allow-scripts allow-same-origin"
+                      title="Telegram Channel"
+                    />
+                    <div 
+                      className="absolute inset-0 z-10" 
+                      style={{ 
+                        background: 'transparent',
+                        pointerEvents: 'auto',
+                        cursor: 'default'
+                      }}
+                      onClick={(e) => e.preventDefault()}
+                      onContextMenu={(e) => e.preventDefault()}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+              <p className="text-xs text-muted-foreground text-center mt-4">
+                Просмотр канала доступен только на сайте
+              </p>
+            </div>
           </div>
-          <Accordion type="single" collapsible className="max-w-3xl mx-auto">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-lg font-semibold">
-                Как снизить стоимость клика в Google Ads?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Используйте точное соответствие ключевых слов, улучшайте показатель качества объявлений, тестируйте различные варианты текстов и следите за релевантностью посадочных страниц.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-semibold">
-                Какой бюджет нужен для старта?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Рекомендуем начинать от 50 000 руб/мес для тестирования гипотез. Это позволит собрать достаточно данных для оптимизации кампаний и выхода на стабильные результаты.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="text-lg font-semibold">
-                Сколько времени занимает настройка?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Полная настройка занимает 3-5 рабочих дней. Это включает анализ ниши, подбор ключевых слов, создание объявлений, настройку конверсий и запуск тестовых кампаний.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </div>
       </section>
 
